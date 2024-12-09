@@ -2,9 +2,20 @@ export const calculateSum = (obj: any, field: any) => obj
   .map((items: any) => items.attributes[field])
   .reduce((prev: any, curr: any) => prev + curr, 0);
 
-export const generateRandomString = (length: number) => {
+// export const generateRandomString = (length: number) => {
+//   let result = '';
+//   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//   const charactersLength = characters.length;
+//   let counter = 0;
+//   while (counter < length) {
+//     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+//     counter += 1;
+//   }
+//   return result;
+// }
+
+ export const generateStringToNumber = (length: number) => {
   let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
   let counter = 0;
   while (counter < length) {
@@ -32,18 +43,18 @@ export const disconnectWallet = () => {
   localStorage.removeItem("wallet-session")
 }
 
-export const msToTime = (duration: number) => {
-  var milliseconds = Math.floor((duration % 1000) / 100),
-    seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
-    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+// export const msToTime = (duration: number) => {
+//   var milliseconds = Math.floor((duration % 1000) / 100),
+//     seconds = Math.floor((duration / 1000) % 60),
+//     minutes = Math.floor((duration / (1000 * 60)) % 60),
+//     hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
 
-  const newhours = (hours < 10) ? "0" + hours : hours;
-  const newminutes = (minutes < 10) ? "0" + minutes : minutes;
-  const newseconds = (seconds < 10) ? "0" + seconds : seconds;
+//   const newhours = (hours < 10) ? "0" + hours : hours;
+//   const newminutes = (minutes < 10) ? "0" + minutes : minutes;
+//   const newseconds = (seconds < 10) ? "0" + seconds : seconds;
 
-  return newhours + ":" + newminutes + ":" + newseconds;
-}
+//   return newhours + ":" + newminutes + ":" + newseconds;
+// }
 
 export const currentTime = () => {
   let date = new Date();
